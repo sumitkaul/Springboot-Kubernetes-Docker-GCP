@@ -1,6 +1,14 @@
 # Springboot-Kubernetes-Docker-GCP
 Springboot-Kubernetes-Docker-GCP
 
+Kubernetes is an open source project which can run in many different environments, from laptops to high-availability multi-node clusters, from public clouds to on-premise deployments, from virtual machines to bare metal.
+We Will deploy a simple Java web-based application (using Spring Boot) to Kubernetes running on Container Engine.
+
+Goal is to run your web application with as a replicated application running on Kubernetes. You take code that we have developed on our machine, turn it into a Docker container image, and then run that image on Container Engine.
+
+
+
+
 
 gcloud auth list
 
