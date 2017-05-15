@@ -118,7 +118,7 @@ gcloud container clusters create hello-java-cluster \
   
   
   
-  #Roll back
+  # Roll back
   
   kubectl rollout undo deployment/hello-java
   
