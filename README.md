@@ -7,17 +7,16 @@ We Will deploy a simple Java web-based application (using Spring Boot) to Kubern
 Goal is to run your web application with as a replicated application running on Kubernetes. You take code that we have developed on our machine, turn it into a Docker container image, and then run that image on Container Engine.
 
 
+Screenshot: 
+
+If you don't already have a Google Account (Gmail or Google Apps), you must create one. Sign-in to Google Cloud Platform console (console.cloud.google.com) and create a new project:
 
 
+`` gcloud auth list ``
 
-gcloud auth list
+`` gcloud config list project ``
 
-
-
-gcloud config list project
-
-
-gcloud config set project <PROJECT_ID>
+`` gcloud config set project <PROJECT_ID> ``
 
 
 sudo update-alternatives --config javac
