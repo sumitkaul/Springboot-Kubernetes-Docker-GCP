@@ -59,10 +59,10 @@ ENTRYPOINT ["java", "-jar", "/app.jar"] ``
 
 
 
-# Once this completes (it'll take some time to download and extract everything) you can test the image locally with the following command which will run a Docker container as a daemon on port 8080 from your newly-created container image:
+##### Once this completes (it'll take some time to download and extract everything) you can test the image locally with the following command which will run a Docker container as a daemon on port 8080 from your newly-created container image:
 `` docker run -ti --rm -p 8080:8080 gcr.io/PROJECT_ID/hello-java:v1 ``
 
-# Now that the image works as intended you can push it to the Google Container Registry, a private repository for your Docker images accessible from every Google Cloud project (but also from outside Google Cloud Platform) :
+##### Now that the image works as intended you can push it to the Google Container Registry, a private repository for your Docker images accessible from every Google Cloud project (but also from outside Google Cloud Platform) :
 `` gcloud docker -- push gcr.io/PROJECT_ID/hello-java:v1 ``
 
 
@@ -97,7 +97,7 @@ ENTRYPOINT ["java", "-jar", "/app.jar"] ``
   `` kubectl expose deployment hello-java --type=LoadBalancer ``
   
   
-  # To find the publicly-accessible IP address of the service, simply request kubectl to list all the cluster services:
+  ### To find the publicly-accessible IP address of the service, simply request kubectl to list all the cluster services:
   
   `` kubectl get services ``
   
@@ -126,7 +126,7 @@ ENTRYPOINT ["java", "-jar", "/app.jar"] ``
   ## And push the image into the container image registry:
   `` gcloud docker -- push gcr.io/PROJECT_ID/hello-java:v2 ``
   
-  ## You can use kubectl set image command to ask Kubernetes to deploy the new version of your application across the entire   cluster one instance at a time with rolling update:
+  #### You can use kubectl set image command to ask Kubernetes to deploy the new version of your application across the entire   cluster one instance at a time with rolling update:
   
   `` kubectl set image deployment/hello-java \
   hello-java=gcr.io/PROJECT_ID/hello-java:v2 ``
