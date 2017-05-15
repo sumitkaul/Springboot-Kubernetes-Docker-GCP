@@ -65,6 +65,8 @@ ENTRYPOINT ["java", "-jar", "/app.jar"] ``
 ##### Now that the image works as intended you can push it to the Google Container Registry, a private repository for your Docker images accessible from every Google Cloud project (but also from outside Google Cloud Platform) :
 `` gcloud docker -- push gcr.io/PROJECT_ID/hello-java:v1 ``
 
+Please note that we need to enable the google container registry before moving forward.
+
 
 
 
