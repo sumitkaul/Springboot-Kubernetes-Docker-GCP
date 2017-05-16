@@ -19,13 +19,13 @@ If you don't already have a Google Account (Gmail or Google Apps), you must crea
 `` gcloud config set project <PROJECT_ID> ``
 
 
-# Use OpenJDK 8
+#### Use OpenJDK 8
 
 `` sudo update-alternatives --config javac ``
 
 `` sudo update-alternatives --config java ``
 
-# Get the Spring Boot Getting Started Example source code
+####  Get the Spring Boot Getting Started Example source code
 
 `` git clone https://github.com/spring-guides/gs-spring-boot.git ``
 
@@ -33,20 +33,20 @@ If you don't already have a Google Account (Gmail or Google Apps), you must crea
 
 
 
-# Run the Application Locally
+#### Run the Application Locally
 `` ./mvnw -DskipTests spring-boot:run ``
 
 
-# Preview on 8080 
+####  Preview on 8080 
 
 
-# Package the Java application as a Docker container
+####  Package the Java application as a Docker container
 `` ./mvnw -DskipTests package ``
 
-# Then, create a Dockerfile:
+####  Then, create a Dockerfile:
 `` touch Dockerfile ``
 
-# Add the following to Dockerfile using your favorite editor
+####  Add the following to Dockerfile using your favorite editor
 `` FROM openjdk:8
 COPY target/gs-spring-boot-0.1.0.jar /app.jar
 EXPOSE 8080/tcp
@@ -54,7 +54,7 @@ ENTRYPOINT ["java", "-jar", "/app.jar"] ``
 
 
 
-# Save this Dockerfile and build this image by running this command
+####  Save this Dockerfile and build this image by running this command
 `` docker build -t gcr.io/PROJECT_ID/hello-java:v1 . `` 
 
 
@@ -71,7 +71,7 @@ Please note that we need to enable the google container registry before moving f
 
 
 
-# Create your cluster
+####  Create your cluster
 
 `` gcloud container clusters create hello-java-cluster \
   --num-nodes 2 \
@@ -79,53 +79,53 @@ Please note that we need to enable the google container registry before moving f
   --zone us-central1-c ``
   
   
- # Deploy your application to Kubernetes 
+ ####  Deploy your application to Kubernetes 
   `` kubectl run hello-java \
   --image=gcr.io/PROJECT_ID/hello-java:v1 \
   --port=8080 ``
   
   
-  # To view the deployment you just created, simply run:
+  ####  To view the deployment you just created, simply run:
  
   `` kubectl get deployments ``
   
   
-  # To view the application instances created by the deployment, run this command:
+  ####  To view the application instances created by the deployment, run this command:
  `` kubectl get pods ``
   
   
-  # Allow external traffic
+  ####  Allow external traffic
   
   `` kubectl expose deployment hello-java --type=LoadBalancer ``
   
   
-  ### To find the publicly-accessible IP address of the service, simply request kubectl to list all the cluster services:
+  ####  To find the publicly-accessible IP address of the service, simply request kubectl to list all the cluster services:
   
   `` kubectl get services ``
   
-  # Access the application 
+  ####  Access the application 
   `` http://<EXTERNAL_IP>:8080 ``
   
   
-  # Scale up your service 
+  ####  Scale up your service 
 
   `` kubectl scale deployment hello-java --replicas=3 ``
   
   `` kubectl get deployment ``
   
   
-  # Roll out an upgrade to your service
+  ####  Roll out an upgrade to your service
   
   Navigate to /gs-spring-boot/complete/src/main/java/hello/HelloController.java
   Introduce some change 
   
-  ## Then rebuild the application with the latest changes:
+  ####  Then rebuild the application with the latest changes:
   `` ./mvnw -DskipTests package ``
   
-  ## Then build a new version of the container image:
+  ####  Then build a new version of the container image:
   `` docker build -t gcr.io/PROJECT_ID/hello-java:v2 . ``
   
-  ## And push the image into the container image registry:
+  ####  And push the image into the container image registry:
   `` gcloud docker -- push gcr.io/PROJECT_ID/hello-java:v2 ``
   
   #### You can use kubectl set image command to ask Kubernetes to deploy the new version of your application across the entire   cluster one instance at a time with rolling update:
@@ -135,7 +135,7 @@ Please note that we need to enable the google container registry before moving f
   
   
   
-  # Roll back
+  ####  Roll back
   
   `` kubectl rollout undo deployment/hello-java ``
   
