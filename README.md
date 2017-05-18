@@ -1,5 +1,5 @@
-# Springboot-Kubernetes-Docker-GCP
-Springboot-Kubernetes-Docker-GCP
+# Springboot-Kubernetes-Docker- Goolge Cloud Platform
+Springboot-Kubernetes-Docker-Goolge Cloud Platform
 
 [Kubernetes](https://kubernetes.io/) is an open source project which can run in many different environments, from laptops to high-availability multi-node clusters, from public clouds to on-premise deployments, from virtual machines to bare metal.
 We Will deploy a simple Java web-based application (using Spring Boot) to Kubernetes running on Container Engine.
